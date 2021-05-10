@@ -4,6 +4,7 @@
 rm -R public/build
 rm -R chrome-extension/build
 
+# Build
 yarn rollup -c
 
 # Move resoureces

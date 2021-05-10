@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear",
-    "build2": "scripty"
+    "build": "scripty",
+    "dev": "scripty",
+    "start": "scripty",
+    "packToPublish": "scripty"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "addons-linter": "^3.4.0",
     "cpx": "^1.5.0",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
