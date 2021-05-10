@@ -26,7 +26,8 @@ for (let i = allBodyElements.length - 1; i >= 0; i--) {
 }
 
 for (let el of els) {
-  el.style["background-color"] = "tomato";
-  el.style["border"] = "2px dashed black";
-  el.style["padding-left"] = "1rem";
+  el.style["background-color"] = "#10ff00";
+  el.style["border"] = "1px dashed black";
 }
+
+console.log(`${els.length} elements found and highlighted`);

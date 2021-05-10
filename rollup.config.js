@@ -80,12 +80,6 @@ export default [
     },
   },
   {
-    input: "./src/background.js",
-    output: {
-      file: "public/build/background.js",
-    },
-  },
-  {
     input: "./src/paintMatches.js",
     output: {
       file: "public/build/paintMatches.js",
