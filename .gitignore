@@ -1,0 +1,6 @@
+/node_modules/
+/public/build/
+/chrome-extension/build/
+
+.DS_Store
+.history
