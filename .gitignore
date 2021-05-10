@@ -1,6 +1,6 @@
 /node_modules/
 /public/build/
-/chrome-extension/build/
+/extensions/**/build/
 
 .DS_Store
 .history
