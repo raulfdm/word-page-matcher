@@ -82,13 +82,13 @@ export default [
   {
     input: "./src/background.js",
     output: {
-      file: "chrome-extension/build/background.js",
+      file: "public/build/background.js",
     },
   },
   {
     input: "./src/paintMatches.js",
     output: {
-      file: "chrome-extension/build/paintMatches.js",
+      file: "public/build/paintMatches.js",
     },
   },
 ];
