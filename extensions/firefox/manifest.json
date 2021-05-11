@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Firefox addon to highlight specific word",
   "permissions": [
-    "activeTab"
+    "tabs",
+    "<all_urls>"
   ],
   "content_scripts": [
     {
