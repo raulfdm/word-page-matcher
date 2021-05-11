@@ -27,6 +27,7 @@ export function paintMatches() {
 
   for (const el of els) {
     el.style["background-color"] = "#10ff00";
+    el.style["color"] = "#2e2e2e";
     el.style["border"] = "1px dashed black";
   }
 
