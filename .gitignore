@@ -1,6 +1,6 @@
 /node_modules/
 /public/build/
-/extensions/**/build/
+/extension/build/
 
 .DS_Store
 .history
