@@ -1,33 +1,26 @@
-const allBodyElements = document.querySelectorAll("body *");
-const els = [];
-const stringToMatch = "de krom";
-// debugger;
+import { paintMatches } from "./paint";
 
-for (let i = allBodyElements.length - 1; i >= 0; i--) {
-  const currentEl = allBodyElements[i];
-  const blockedEls = ["script", "style"];
+const targetNode = document.querySelector("body");
 
-  if (!blockedEls.includes(currentEl.localName)) {
-    if (
-      currentEl.textContent.toLowerCase().includes(stringToMatch) &&
-      /**
-       * currentEl.childElementCount combined with textContent
-       * is the best indication that the current element has only text and
-       * is not the main div, root element or whatever.
-       *
-       * I still have to create an array because some websites might use
-       * duplicated html elements to either show or hide for certain screens.
-       * */
-      currentEl.childElementCount === 0
-    ) {
-      els.push(currentEl);
+// Options for the observer (which mutations to observe)
+const config = { attributes: true, childList: true, subtree: true };
+
+// Callback function to execute when mutations are observed
+const callback = function (mutationsList, observer) {
+  // Use traditional 'for loops' for IE 11
+  for (const mutation of mutationsList) {
+    if (mutation.type === "childList") {
+      // console.log("A child node has been added or removed.");
+      paintMatches();
     }
+    // else if (mutation.type === "attributes") {
+    // console.log("The " + mutation.attributeName + " attribute was modified.");
+    // }
   }
-}
+};
 
-for (let el of els) {
-  el.style["background-color"] = "#10ff00";
-  el.style["border"] = "1px dashed black";
-}
+// Create an observer instance linked to the callback function
+const observer = new MutationObserver(callback);
 
-console.log(`${els.length} elements found and highlighted`);
+// Start observing the target node for configured mutations
+observer.observe(targetNode, config);
